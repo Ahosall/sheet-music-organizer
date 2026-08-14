@@ -1,0 +1,5 @@
+{
+  "name": "Organizador de Partituras",
+  "description": "Separa páginas de um PDF em grupos e exporta arquivos individuais ou um ZIP. Processamento local no navegador.",
+  "requestFramePermissions": []
+}

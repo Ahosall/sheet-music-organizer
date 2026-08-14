@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Georgia", serif;
+
+  --color-cream-50: var(--cream-50);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+
+  --color-paper: var(--paper);
+
+  --color-ink-400: var(--ink-400);
+  --color-ink-500: var(--ink-500);
+  --color-ink-600: var(--ink-600);
+  --color-ink-700: var(--ink-700);
+  --color-ink-800: var(--ink-800);
+  --color-ink-900: var(--ink-900);
+
+  --color-sage-50: var(--sage-50);
+  --color-sage-100: var(--sage-100);
+  --color-sage-200: var(--sage-200);
+  --color-sage-500: var(--sage-500);
+  --color-sage-600: var(--sage-600);
+  --color-sage-700: var(--sage-700);
+
+  --color-honey-50: var(--honey-50);
+  --color-honey-100: var(--honey-100);
+  --color-honey-600: var(--honey-600);
+  --color-honey-700: var(--honey-700);
+
+  --color-rose-50: var(--rose-50);
+  --color-rose-100: var(--rose-100);
+  --color-rose-600: var(--rose-600);
+  --color-rose-700: var(--rose-700);
+
+  --color-scrim: var(--scrim);
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --cream-50: #f4f7fb;
+  --cream-100: #e8eef5;
+  --cream-200: #d5deea;
+  --cream-300: #becad9;
+
+  --paper: #ffffff;
+
+  --ink-400: #8b97a8;
+  --ink-500: #6b7889;
+  --ink-600: #526070;
+  --ink-700: #3e4c5c;
+  --ink-800: #2c3a4a;
+  --ink-900: #1c2734;
+
+  --sage-50: #eef4fa;
+  --sage-100: #dce8f3;
+  --sage-200: #c2d6e8;
+  --sage-500: #5b8db0;
+  --sage-600: #4a7a9e;
+  --sage-700: #3d6585;
+
+  --honey-50: #eef5f7;
+  --honey-100: #d7e8ee;
+  --honey-600: #3e7388;
+  --honey-700: #335f70;
+
+  --rose-50: #f8eef1;
+  --rose-100: #f0d9e0;
+  --rose-600: #c45b6a;
+  --rose-700: #a84a58;
+
+  --scrim: #0c1218;
+  --shadow-card: 0 1px 2px rgba(28, 39, 52, 0.04), 0 8px 24px rgba(28, 39, 52, 0.05);
+  --focus-ring: 0 0 0 3px rgba(74, 122, 158, 0.2);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cream-50: #111820;
+  --cream-100: #1a232e;
+  --cream-200: #2a3644;
+  --cream-300: #3a4858;
+
+  --paper: #1a222c;
+
+  --ink-400: #7d8b9c;
+  --ink-500: #93a1b3;
+  --ink-600: #b0bccb;
+  --ink-700: #c5d0dc;
+  --ink-800: #dce4ed;
+  --ink-900: #eef2f7;
+
+  --sage-50: #1a2836;
+  --sage-100: #223344;
+  --sage-200: #8eb4d0;
+  --sage-500: #7aa3c4;
+  --sage-600: #6b96ba;
+  --sage-700: #8bb0cc;
+
+  --honey-50: #1a2c32;
+  --honey-100: #243840;
+  --honey-600: #5a9eae;
+  --honey-700: #6aafbe;
+
+  --rose-50: #2a1c22;
+  --rose-100: #3a242c;
+  --rose-600: #e07a86;
+  --rose-700: #f08a94;
+
+  --scrim: #04070a;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.28);
+  --focus-ring: 0 0 0 3px rgba(107, 150, 186, 0.32);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--cream-50);
+    color: var(--ink-900);
+  }
+
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+}
+
+@layer components {
+  .ui-card {
+    background-color: var(--paper);
+    border: 1px solid var(--cream-200);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .ui-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background-color: var(--cream-50);
+    border: 1px solid var(--cream-200);
+    border-radius: 0.75rem;
+    color: var(--ink-900);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .ui-input::placeholder {
+    color: var(--ink-400);
+  }
+
+  .ui-input:focus {
+    outline: none;
+    border-color: var(--sage-500);
+    box-shadow: var(--focus-ring);
+    background-color: var(--paper);
+  }
+
+  .ui-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    background-color: var(--sage-600);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(28, 39, 52, 0.08);
+    transition: background-color 0.15s ease;
+  }
+
+  .ui-btn-primary:hover:not(:disabled) {
+    background-color: var(--sage-700);
+  }
+
+  .ui-btn-primary:disabled {
+    background-color: var(--cream-200);
+    color: var(--ink-400);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .ui-btn-honey {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    background-color: var(--honey-600);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(28, 39, 52, 0.08);
+    transition: background-color 0.15s ease;
+  }
+
+  .ui-btn-honey:hover:not(:disabled) {
+    background-color: var(--honey-700);
+  }
+
+  .ui-btn-honey:disabled {
+    background-color: var(--cream-200);
+    color: var(--ink-400);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .ui-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ink-700);
+    border: 1px solid var(--cream-200);
+    background-color: var(--paper);
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .ui-btn-ghost:hover {
+    background-color: var(--cream-100);
+    border-color: var(--cream-300);
+    color: var(--ink-900);
+  }
+
+  .ui-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.5rem;
+    color: var(--ink-500);
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .ui-icon-btn:hover:not(:disabled) {
+    background-color: var(--cream-100);
+    color: var(--ink-900);
+  }
+
+  .ui-icon-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ui-icon-btn-danger:hover:not(:disabled) {
+    background-color: var(--rose-50);
+    color: var(--rose-600);
+  }
+
+  .ui-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ink-600);
+    margin-bottom: 0.375rem;
+  }
+}
+
+@layer utilities {
+  .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cream-300) transparent;
+  }
+}
